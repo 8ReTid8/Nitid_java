@@ -43,6 +43,5 @@ class employee{
     }
     public void printans(){
         System.out.println(fname+" "+lname+" "+earn()+" "+bonus());
-        printf("%.2f")
     }
 }
