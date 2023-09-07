@@ -2,41 +2,54 @@ import java.util.Scanner;
 
 public class W4_10{
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
-        int m = scanner.nextInt(); // จำนวนเลน
-        int n = scanner.nextInt(); // เลนเริ่มต้น
-        int t = scanner.nextInt(); // ระยะเวลา
-
-        int[] lanes = new int[m]; // สถานะของถนน
-
-        // อ่านสถานะของถนนตามเวลา
-        for (int i = 0; i < t; i++) {
-            for (int j = 0; j < m; j++) {
-                lanes[j] = scanner.nextInt();
+        int m = input.nextInt(); // จำนวนเลน col
+        int n = input.nextInt(); // เลนเริ่มต้น row
+        int t = input.nextInt(); // ระยะเวลา
+        int[] keep = new int[t];
+        int[][] road = new int[n][m];
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                road[i][j] = input.nextInt();
             }
-
-            int choice = chooseLane(lanes, n);
-            System.out.println(choice);
-            n = choice;
         }
-
-        scanner.close();
-    }
-
-    // เลือกเลนในการบังคับรถ
-    private static int chooseLane(int[] lanes, int currentLane) {
-        int leftLane = currentLane > 1 ? lanes[currentLane - 2] : Integer.MAX_VALUE;
-        int rightLane = currentLane < lanes.length ? lanes[currentLane] : Integer.MAX_VALUE;
-        int stayLane = lanes[currentLane - 1];
-
-        // หาเลนที่มีสิ่งกีดขวางน้อยที่สุด
-        if (leftLane < rightLane && leftLane < stayLane) {
-            return currentLane - 1;
-        } else if (rightLane < stayLane) {
-            return currentLane + 1;
-        } else {
-            return currentLane;
+        int goalrow=0,goalcol=0;
+        for(int i=0;i<m;i++){
+            if(road[n-1][i]==0){
+                goalrow = n-1;
+                goalcol = i;
+            }
+        }
+        keep = findrightway(road,t-1,goalrow,goalcol,keep);
+        for(int i=0;i<t;i++){
+            System.out.print(keep[i]+" ");
         }
     }
+    public static int[] findrightway(int[][] road,int t,int row,int col,int ans[]){
+        if(row==0){
+            if(col<t){
+                ans[row]=2;
+            }
+            if(col==t){
+                ans[row]=3;
+            }
+            if(col>t){
+                ans[row]=1;
+            }
+        }
+        else if(0==road[row-1][col-1]&&col<t){
+            ans[row] = 2;
+            return findrightway(road,t,row-1,col-1,ans);
+        }
+        else if(0==road[row-1][col]&&col==t){
+            ans[row] = 3;
+            return findrightway(road,t,row-1,col,ans);
+        }
+        else if(0==road[row-1][col+1]&&col>t){
+            ans[row] = 1;
+            return findrightway(road,t,row-1,col+1,ans);
+        }
+        return ans;
+    } 
 }
