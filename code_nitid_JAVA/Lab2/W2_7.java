@@ -1,35 +1,24 @@
-// package W2_7;
-
-// public class Cal {
-//     public double x,y,w,h;
-//     public double left,right,top,bottom;
-//     public Cal(double x,double y,double w,double h){
-//         this.x = x;
-//         this.y = y;
-//         this.w = w;
-//         this.h = h;
-//         this.bottom = y+h/2;
-//         this.top = y-h/2;
-//         this.left = x-w/2;
-//         this.right = x+w/2;
-//     }
-    
-
-    // public void left(){
-    //      this.left = (x-w)/2;
-    // }
-    // public void right(){
-    //     this.right = (x+w)/2;
-    // }
-    // public void top(){
-    //     this.top = (y-h)/2;
-    // }
-    // public void bottom(){
-    //     this.bottom =(y+h)/2;
-    // }
-//}
-
-public class Circle {
+import java.util.Scanner;
+public class W2_7{
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        int i;
+        System.out.println("Enter r1's center x-, y-coordinates, width, and height: ");
+        double[] sq1 = new double[4];
+        for(i=0;i<4;i++){
+            sq1[i] = input.nextDouble();
+        }
+        double[] sq2 = new double[4];
+        Circle square1 = new Circle(sq1[0],sq1[1],sq1[2],sq1[3]);
+        System.out.println("Enter r2's center x-, y-coordinates, width, and height: ");
+        for(i=0;i<4;i++){
+            sq2[i] = input.nextDouble();
+        }
+        Circle square2 = new Circle(sq2[0],sq2[1],sq2[2],sq2[3]);
+        square2.inside(square1);
+    }
+}
+class Circle {
     //variable in class
     public double x;
     public double y;

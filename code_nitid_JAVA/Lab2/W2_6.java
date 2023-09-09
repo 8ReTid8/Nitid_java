@@ -1,12 +1,18 @@
 // package W2_6;
-
-import java.util.Date;
-
-public class Account {
+import java.util.Scanner;
+public class W2_6{
+    public static void main(String[] args){
+        Account non = new Account(1122,20000);
+        non.withdraw(2500);
+        System.out.println(non.getbal());
+        non.desposit(3000);
+        System.out.println(non.getbal()); 
+        System.out.println(non.gmi()); 
+    }
+}
+class Account {
     private int id;
     private double balance,air=0.045;
-    private Date datecreate;
-
     Account(){
         this.id = 0;
         this.balance = 0;
