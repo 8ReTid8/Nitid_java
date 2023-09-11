@@ -6,9 +6,9 @@ public class Main {
         Account nitid = new Account(1110,20000,new date(1,"1",2023));
         fixAccount nid = new fixAccount(1110,20000,new date(1,"1",2023));
         savingAccount nitod = new savingAccount(1110,20000,new date(1,"1",2023));
-        nitod.tranferMoney(non,10000);
+        nitod.tranferMoney(nid,10000);
         nid.withdraw(500);
-        System.out.println(nitod.getBalance()); 
+        System.out.println(nid.getBalance()); 
         // non.setAir(0.045);
         // non.withdraw(2500);
         // System.out.println(non.getBalance());
@@ -26,12 +26,12 @@ public class Main {
         // System.out.println(nitid.getBalance());
         // System.out.println(nitid.gmi()); 
         // nitid.setAir(0.045);
-        // // non.withdraw(2500);
-        // // System.out.println(non.getBalance());
+        // non.withdraw(2500);
+        // System.out.println(non.getBalance());
         
         // non.tranferMoney(nitid,10000);
         // System.out.println(non.getBalance());
         // System.out.println(nitid.getBalance()); 
-        // // System.out.println(non.gmi()); 
+        // System.out.println(non.gmi());
     }
 }
