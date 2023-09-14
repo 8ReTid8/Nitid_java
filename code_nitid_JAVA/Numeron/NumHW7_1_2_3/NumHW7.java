@@ -26,55 +26,17 @@ public class NumHW7 {
             }
         }
         if(n==2){
-            System.out.println("iter "+i);
             math.R();
-            System.out.println("R[] is ");
-            for(int j=0;j<math.size;j++){
-                System.out.print(math.r[j]+" ");
-            }
-            System.out.println("");
-            math.D0();
-            System.out.println("D[] is ");
-            for(int j=0;j<math.size;j++){
-                System.out.print(math.d[j]+" ");
-            }
-            System.out.println("");
-            System.out.println("ramda is "+math.value());
-            math.X();
-            System.out.println("X[] is ");
-            for(int j=0;j<math.size;j++){
-                System.out.print(math.x[j]+" ");
-            }
-            System.out.println("");
-            math.R();
-            System.out.println("R[] is ");
-            for(int j=0;j<math.size;j++){
-                System.out.print(math.r[j]+" ");
-            }
-            System.out.println("");
-            i++;
             while(math.conjuCheck()){
                 System.out.println("iter "+i);
-                System.out.println("a is "+math.A());
-                math.D();
-                System.out.println("D[] is ");
-                for(int j=0;j<math.size;j++){
-                    System.out.print(math.d[j]+" ");
+                if(i==1){
+                    math.D0();
                 }
-                System.out.println("");
-                System.out.println("ramda is "+math.value());
+                else{
+                    math.D();
+                }
                 math.X();
-                System.out.println("X[] is ");
-                for(int j=0;j<math.size;j++){
-                    System.out.print(math.x[j]+" ");
-                }
-                System.out.println("");
                 math.R();
-                System.out.println("R[] is ");
-                for(int j=0;j<math.size;j++){
-                    System.out.print(math.r[j]+" ");
-                }
-                System.out.println("");
                 i++;
             }
             for(i=0;i<math.size;i++){

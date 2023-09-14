@@ -116,7 +116,7 @@ public class Method7 {
         }
     }
 
-    double value(){
+    double ramda(){
         double sumtop = 0;
         double sumbutt = 0;
         double[] temp = new double[size];
@@ -131,7 +131,7 @@ public class Method7 {
     }
 
     void X(){
-        double temp = value();
+        double temp = ramda();
         for(int i=0;i<size;i++){
             x[i] = x[i]+temp*d[i];
         }
@@ -141,7 +141,7 @@ public class Method7 {
         for(int i=0;i<size;i++){
             sum += r[i]*r[i];
         }
-        if(Math.abs(sum)==0){
+        if(Math.sqrt(sum)<0.01){
             return false;
         }
         else{
