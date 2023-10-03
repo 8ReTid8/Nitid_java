@@ -2,14 +2,14 @@
 import java.util.Scanner;
 public class Method8 {
     Scanner input = new Scanner(System.in);
-    double[] xmain,fxmain,x,fx,c,temp;
+    double[] xmain,fxmain,x,fx,c,temp,l;
     double y;
     int sizemain,size,j=1;
     public Method8(){
         sizemain = input.nextInt();
         xmain = new double[sizemain];
         fxmain = new double[sizemain];
-        c = new double[sizemain];
+    
     }
     void add(){
         for(int i=0;i<sizemain;i++){
@@ -22,6 +22,7 @@ public class Method8 {
         x = new double[size];
         fx = new double[size];
         c = new double[size];
+        l = new double[size];
     }
     void addchoosex(){
         int n;
@@ -31,6 +32,7 @@ public class Method8 {
             fx[i] = fxmain[n];
         }
         c[0] = fx[0];
+        y=0;
     }
     double c(double[] fx,double[] x,int start,int end){
        if(start==end){
@@ -54,6 +56,23 @@ public class Method8 {
             }
         }
     }
+
+    void l_and_y(double xfind){
+        for(int i=0;i<size;i++){
+            double top = 1;
+            double butt = 1;
+            for(int j=0;j<size;j++){
+                if(i==j){
+                    continue;
+                }
+                top *= x[j]-xfind;
+                butt *= x[j]-x[i];
+            }
+            l[i] = top/butt;
+            y += l[i]*fx[i];
+        }
+    }
+
     double findy(double xfind){
         for(int i=0;i<size;i++){
             double sum = c[i];
@@ -63,5 +82,15 @@ public class Method8 {
             y += sum;
         }
         return y; 
+    }
+
+  
+    double linearspline(double xfind,int i){
+        return fx[i]+m(i)*(xfind-x[i]);
+    }
+
+    double m(int i){
+        i++;
+        return (fx[i]-fx[i-1])/(x[i]-x[i-1]);
     }
 }

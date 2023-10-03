@@ -1,7 +1,10 @@
 import java.util.Scanner;
 public class W8_5 {
     public static void main(String[] args){
-
+        octagon temp1 = new octagon(1);
+        octagon temp2 = new octagon(5);
+        System.out.println(temp1.getPerimeter());
+        System.out.println(temp1.compareTo(temp2));
     }
 }
 
@@ -30,22 +33,39 @@ abstract class GeometricObject {
     public abstract double getPerimeter();
 }
 
-class circle extends GeometricObject{
+class circle extends GeometricObject implements Comparable<Object>{
     double r;
     public circle(double r){
         this.r = r;
     }
-
+    @Override
     public double getArea(){
         return 3.14*(r*r);
     }
-
+    @Override
     public double getPerimeter(){
         return 2*3.14*r;
     }
+    public boolean equals(Object x){
+        if(((circle)x)==this){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    @Override
+    public int compareTo(Object x) {
+        if(((circle)x).getPerimeter()==this.getPerimeter()){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    }
 }
 
-class rectangle extends GeometricObject{
+class rectangle extends GeometricObject implements Comparable<Object>{
     double width,height;
     public rectangle(double w,double h){
         this.width = w;
@@ -59,9 +79,26 @@ class rectangle extends GeometricObject{
     public double getPerimeter() {
         return 2*(width+height);
     }
+    public boolean equals(Object x) {
+        if(((rectangle)x)==this){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    @Override
+    public int compareTo(Object x) {
+        if(((rectangle)x).getArea()==this.getArea()){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    }
 }
 
-class octagon extends GeometricObject{
+class octagon extends GeometricObject implements Comparable<Object>{
     double side;
     public octagon(double side){
         this.side = side;
@@ -72,7 +109,24 @@ class octagon extends GeometricObject{
     }
     @Override
     public double getPerimeter() {
-        return 0;
+        return side*8;
+    }
+    public boolean equals(Object x) {
+        if(((octagon)x)==this){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    @Override
+    public int compareTo(Object x) {
+        if(((octagon)x).getArea()==this.getArea()){
+            return 1;
+        }
+        else{
+            return 0;
+        }
     }
     
 }
