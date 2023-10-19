@@ -1,0 +1,32 @@
+1.1
+1. เรียก constructor ของ super class คือ GeometricObject
+2. เรียก constructor ของ class Circle
+
+1.2 
+class GeometricObject {
+    String color;
+    boolean filled;
+    Date dateCreated;
+    GeometricObject() {
+    }
+    GeometricObject(String color, boolean filled) {
+    this.color = color;
+    this.filled = filled;
+    }
+    public String getColor() {
+    return color;
+    }
+    public void setColor(String color) {
+    this.color = color;
+    }
+    public boolean isFilled() {
+    return filled;
+    }
+    public Date getDateCreated() {
+    return dateCreated;
+    }
+    public String toString() {
+    return "Color: "+color+" Filled: "+filled+" Date created: "+dateCreated;
+    }
+}
+

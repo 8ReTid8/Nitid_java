@@ -1,0 +1,25 @@
+1. Is fruit instanceof Orange? false
+
+2. Is fruit instanceof Apple? true
+
+3. Is fruit instanceof GoldenDelicious? true
+
+4. Is fruit instanceof Macintosh? false
+
+5. Is orange instanceof Orange? true
+
+6. Is orange instanceof Fruit? true
+
+7. Is orange instanceof Apple? false
+
+8. Suppose the method makeApple() is defined in the Apple class.
+
+Can fruit invoke this method? ไม่ได้
+
+Can orange invoke this method? ไม่ได้
+
+9. Suppose the method makeOrangeJuice() is defined in the Orange class.
+
+Can orange invoke this method? ได้
+
+Can fruit invoke this method? ไม่ได้

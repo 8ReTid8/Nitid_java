@@ -58,6 +58,7 @@ class SalariedEmployee extends Employee{
             return salary*6;
         }
     }
+    @Override
     public double earning(){
         return salary*0.95;
     }
@@ -80,6 +81,7 @@ class ComEmployee extends Employee{
             return grossSale*3;
         }
     }
+    @Override
     public double earning(){
         return grossSale*comRate;
     }

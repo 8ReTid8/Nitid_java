@@ -1,0 +1,25 @@
+ไม่ได้ เพราะ getNumbers ไม่มีใน
+
+ได้ เพราะ getNumber มีใน
+SuperClass แต่ถ้าใส่ int จะเรียก
+ของ SuperClass ถ้าใส่ long ถึงจะ
+เรียกของ Subclass
+
+ได้ เพราะมี getNumber ใน
+
+ได้ เพราะ เป็นการ override จาก
+private ใน SuperClass เป็น
+public ใน Subclass
+
+ได้ เพราะ getNumber มีใน
+SuperClass แต่ถ้าใส่ parameter
+มาจะเรียกของ Subclass ที่
+override ใหม่
+
+ไม่ได้ เพราะ การเปลี่ยน getNumber เป็น
+default ทำให้เข้าถึงได้เฉพาะ ใน
+package เดียวกันเท่านั้น
+
+ไม่ได้ เพราะ การเปลี่ยน getNumber เป็น
+default ทำให้เข้าถึงได้เฉพาะ ใน
+class เดียวกันเท่านั้น

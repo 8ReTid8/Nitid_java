@@ -1,0 +1,8 @@
+A's x is 0 Java.lang.object@.......... เพราะ class A มีการ override toString เอาไว้ให้ปริ้นใน 
+format "A's x is " + x ส่วน Object มี method toString อยู่แล้วที่จะปริ้นค่าที่ตัวแปรนั้นเก็บออกมาเลย
+
+False เพราะ a1, a2 เป็นตัวแปร class Object ทำให้ใส่ใน equals(A a) ของ class A ไม่ได้ จึงใช้ equals() ของ class Object 
+ซึ่งเป็นการเทียบ address Object 2 อัน ทำให้ไม่เท่ากัน
+
+True เพราะ a1, a2 เป็นตัวแปร class A เมื่อเรียก a1.equals(a2) เกิด Static binding แต่ class A มีการ override equals เอาไว้ ทำให้เกิด Dynamic binding และใช้ 
+equals ใน class A เป็นการเทียบระหว่าง x ของ a1,a2 ซึ่งเท่ากัน

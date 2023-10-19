@@ -66,7 +66,7 @@ abstract class AbstractDrawFunction extends JPanel{
     }
 }
 class ex1 extends AbstractDrawFunction{
-    
+
     @Override
     public double f(double x){
         return x*x;
@@ -136,10 +136,3 @@ class ex7 extends AbstractDrawFunction{
         drawFunction();
     }
 }
-//abstract class geo{
-//    int w,h;
-//    int r;
-//    abstract double calarea();
-//       
-//    
-//}

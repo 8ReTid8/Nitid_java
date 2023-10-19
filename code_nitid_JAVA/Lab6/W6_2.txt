@@ -1,0 +1,2 @@
+1 ต้องเป็น this.radius = radius เพราะโปรแกรมไม่รู้ว่าจะใช้ radius ไหน
+2 ต้องเป็น this.length = length เพราะโปรแกรมไม่รู้ว่าจะใช้ length ไหน

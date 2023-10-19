@@ -7,12 +7,12 @@ public class NumHW4_1_2{
         // GAUSS
         // mat.gauss();
         // CRAMER
-        // mat.cramer();
+        mat.cramer();
         // GAUSS_JORDAN
         // mat.gauss_jordan();
         // INVERSION
         // mat.inversion();
         // LU
-        mat.LU();
+        // mat.LU();
     }
 }

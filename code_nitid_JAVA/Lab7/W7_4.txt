@@ -1,0 +1,13 @@
+1. x.news is Animal's news 
+2. ((Tiger)x).news is Tiger's news 
+3. x.smile() is smile from Animal 
+4. ((Tiger)x).smile() is smile from Tiger 
+5. x.getNews() is Tiger's news 
+6. x.getMessage() is Animal's message
+
+1. Dynamic binding ไม่เกิดกับตัวแปร เกิดเฉพาะ method ทำให้เลือกตัวแปรจาก ชนิด object ของ x มาใช้ทันที
+2. การแปลง x เป็น Tiger ทำให้ x เรียกใช้ตัวแปรจากชนิด object ของ x เอง คือ Tiger
+3. เพราะ method smile() เป็น static method ทำให้ smile() ถูกเรียกใน static binding ใน class Animal
+4. การแปลง x เป็น Tiger ทำให้ static binding เรียก smile() ใน Tiger เพราะ smile() เป็น static method
+5. เกิด static binding ก่อน จากนั้นจึงเกิด dynamic binding ว่า Tiger มี getNews ไหม ถ้ามีจะเรียก getNews จาก class Tiger
+6. เกิด static binding และ class Tiger ไม่มี getMessage จึงเรียก getMessage จาก super class ซึ่งก็คือ Animal

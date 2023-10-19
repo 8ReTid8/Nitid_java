@@ -13,8 +13,8 @@ public class NumHW7 {
         if(n==1){
             do{
                 System.out.println("iter "+i);
-                math.cal();
-                // math.seidel();
+                // math.cal();
+                math.seidel();
                 for(int j=0;j<math.size;j++){
                     System.out.print(math.x[j]+" ");
                 }

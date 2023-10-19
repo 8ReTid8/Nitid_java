@@ -3,10 +3,10 @@ public class NumHW1_1{
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
         double x = input.nextDouble();
-        Double y = (43*x)-180;
+        Double y = 5-x;
         while(y!=0){
             x++;
-            double ynew = (43*x)-180;
+            double ynew = 5-x;
             if(y*ynew>0){
                 y = ynew;
             }

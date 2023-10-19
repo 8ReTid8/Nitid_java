@@ -1,0 +1,8 @@
+ 
+A B เพราะจาก method t() ใน Test38 มีการรับ parameter เป็น Type A ซึ่งเป็น super class ของ B ทำให้ B สามารถใส่ได้ 
+และใน class A มี method f() ที่ปริ้น A ส่วน class B ที่เป็น subclass ก็มี override f() ที่จะปริ้น B
+
+Static binding จะเกิดขึ้นเมื่อ a.inc() จากที่ a มี Type เป็น A แต่เก็บ B ที่เป็น subclass ของ A ทำให้ตอนเรียก method inc() เกิด static binding 
+และเมื่อเสร็จแล้ว จะเกิด Dynamic binding ต่อว่า class B มี method inc() ไหม ถ้ามีจะใช้
+
+ไม่สามารถ cast ที่ class ได้ ต้องทำที่ตัวแปรที่เก็บ Object Object ap = new fruit; Object apple = (Apple) ap
