@@ -5,12 +5,11 @@ public class NumHW12_2{
         double x0 = input.nextDouble();
         double xn = input.nextDouble();
         double n = input.nextDouble();
-        double h = (xn-x0)/n;
+        double h = (xn-x0)/(2*n);
         double sum = f(x0)+f(xn);
         int i=1;
         double xtemp = x0;
         while(x0<xn){
-            
             x0+=h;
             if(x0==xn){
                 break;

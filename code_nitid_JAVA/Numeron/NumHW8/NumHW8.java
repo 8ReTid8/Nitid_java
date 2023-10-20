@@ -19,10 +19,10 @@ public class NumHW8 {
             double x = input.nextDouble();
             input.nextLine();
             if(s.equals("d")){
-                // cal.c();
-                for(int i=1;i<cal.size;i++){
-                    cal.c[i] = cal.c(cal.fx,cal.x,0,i);
-                }
+                cal.c();
+                // for(int i=1;i<cal.size;i++){
+                //     cal.c[i] = cal.c(cal.fx,cal.x,0,i);
+                // }
                 System.out.println("y is "+cal.findy(x));
                 for(int i=0;i<cal.size;i++){
                     System.out.println(cal.c[i]);
