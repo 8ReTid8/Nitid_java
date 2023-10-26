@@ -4,23 +4,23 @@ public class NumHW12_2{
         Scanner input = new Scanner(System.in);
         double x0 = input.nextDouble();
         double xn = input.nextDouble();
-        double n = input.nextDouble();
-        double h = (xn-x0)/(2*n);
+        double n = 2*input.nextDouble();
+        double h = (xn-x0)/(n);
         double sum = f(x0)+f(xn);
         int i=1;
         double xtemp = x0;
-        while(x0<xn){
-            x0+=h;
-            if(x0==xn){
-                break;
-            }
+        while(i<n){
+            double x = x0+h*i;
+            // if(x0==xn){
+            //     break;
+            // }
             if(i%2==0){
-                sum += 2*f(x0);
+                sum += 2*f(x);
             }
             else{
-                sum += 4*f(x0);
-                System.out.println(4*f(x0));
+                sum += 4*f(x);
             }
+            System.out.println(sum);
             i++;
         }
         sum *= h/3;

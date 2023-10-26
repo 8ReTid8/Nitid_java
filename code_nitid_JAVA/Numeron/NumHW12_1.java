@@ -8,12 +8,14 @@ public class NumHW12_1{
         double h = (xn-x0)/n;
         double sum = f(x0)+f(xn);
         double xtemp = x0;
-        while(x0<xn){
-            x0+=h;
-            if(x0==xn){
-                break;
-            }
-            sum += 2*f(x0);
+        int i=1;
+        while(i<n){
+            double x = x0+h*i;
+            // if(x0==xn){
+            //     break;
+            // }
+            sum += 2*f(x);
+            i++;
         }
         sum*=(h/2);
         System.out.println(sum);

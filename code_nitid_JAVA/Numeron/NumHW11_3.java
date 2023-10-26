@@ -14,7 +14,7 @@ public class NumHW11_3 {
         double[] a = new double[m];
         addsum(sumx,sumxy,fx,x,m,n,mat);
         for(int i=0;i<sumx.length;i++){
-           System.out.println(sumxy[i]); 
+           System.out.println(sumx[i]); 
         }
         for(int i=0;i<m;i++){
             for(int j=0;j<m;j++){
@@ -23,6 +23,12 @@ public class NumHW11_3 {
             System.out.println();
         }
         gauss_jordan(mat, m, a, sumxy);
+        for(int i=0;i<m;i++){
+            for(int j=0;j<m;j++){
+                System.out.print(mat[i][j]+" ");
+            }
+            System.out.println();
+        }
         addx(a,xfind,m);
         for(int i=0;i<m;i++){
             System.out.println(a[i]);
